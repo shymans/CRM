@@ -12,11 +12,22 @@ class Rolodex
     puts "#{@contacts}"
   end
 
-  def self.delete_selected_contact
-
+  def self.delete_selected_contact(contact_id_delete)
+    @contacts.find do |y| if y.id.to_i == contact_id_delete
+      puts "are you sure you want to delete the selected id?"
+      puts "select 1 for yes, 2 for no"
+      final_answer = gets.chomp.to_i
+      contacts.delete_if{|i| i.id.to_i == contact_id_delete}
+      # if final_answer == 1
+      #   contacts.delete_at(contact_id_delete)
+      # else
+      #   puts "taking you back to the menu"
+      # end
+    end
+    end
   end
 
-  def self.find_contact(contact_id)
+  def self.modify_selected_contact(contact_id)
     @contacts.find do |x| if x.id.to_i == contact_id
       puts "please enter the new information"
       puts "First name: "

@@ -66,14 +66,16 @@ class CRM
   end
   
   def delete_contact
-    Rolodex.delete_contact_new
+    puts "what is the id of the contact you would like to delete?"
+    delete_answer = gets.chomp.to_i
+    Rolodex.delete_selected_contact(delete_answer)
     main_menu
   end
 
   def modify_contact
     puts "what is the id of the contact you would like to change?"
     modify_answer = gets.chomp.to_i
-    Rolodex.find_contact(modify_answer)
+    Rolodex.modify_selected_contact(modify_answer)
     main_menu
   end
 end
