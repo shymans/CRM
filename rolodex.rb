@@ -18,12 +18,7 @@ class Rolodex
       puts "select 1 for yes, 2 for no"
       final_answer = gets.chomp.to_i
       contacts.delete_if{|i| i.id.to_i == contact_id_delete}
-      # if final_answer == 1
-      #   contacts.delete_at(contact_id_delete)
-      # else
-      #   puts "taking you back to the menu"
-      # end
-    end
+      end
     end
   end
 
