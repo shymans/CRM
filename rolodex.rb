@@ -18,7 +18,6 @@ class Rolodex
 
   def self.find_contact(contact_id)
     @contacts.find do |x| if x.id.to_i == contact_id
-      
       puts "please enter the new information"
       puts "First name: "
       new_first_name = gets.chomp
@@ -28,9 +27,11 @@ class Rolodex
       new_email = gets.chomp
       puts "note: "
       new_note = gets.chomp
-      replace_contact = Contact.new(new_first_name, new_last_name, new_email, new_note)
-      replace_contact.id = contact_id
-      @contacts << replace_contact
+      x.id = contact_id
+      x.first_name = new_first_name
+      x.last_name = new_last_name
+      x.email = new_email
+      x.note = new_note
       end 
     end
   end
